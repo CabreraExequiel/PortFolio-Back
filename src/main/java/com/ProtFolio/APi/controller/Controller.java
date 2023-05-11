@@ -49,6 +49,7 @@ public class Controller {
    }
    
    @PostMapping("/login")
+   @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<?> login(@RequestBody Usuario usuario) {
         Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
         if (user != null) {
