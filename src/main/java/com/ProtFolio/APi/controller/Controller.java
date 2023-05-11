@@ -89,10 +89,12 @@ public List<Usuario> verUsuarios(){
     private IEducacionService eduService;
     
     @PostMapping("/nuevo/educacion")
+    
     public void agregarEducacion(@RequestBody Educacion educ){
         eduService.agregarEducacion(educ);
     }
     @GetMapping("/ver/educacion")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ResponseBody
     
     public List<Educacion> verEducacion(){
@@ -113,6 +115,7 @@ public List<Usuario> verUsuarios(){
         expService.agregarExperiencia(exp);
     }
     @GetMapping("/ver/experiencia")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ResponseBody
     
     public List<Experiencia> verExperiencia(){
@@ -131,6 +134,7 @@ public void agregarEmpleo (@RequestBody Empleo emp){
     empService.agregarEmpleo(emp);
 }
 @GetMapping("/ver/empleo")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @ResponseBody
 
 public List<Empleo> verEmpleo(){
@@ -149,6 +153,7 @@ public List<Empleo> verEmpleo(){
         proService.agregarProyecto(pro);
     }
     @GetMapping("/ver/proyecto")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ResponseBody
     public List<Proyecto> verProyecto(){
         return proService.verProyecto();
