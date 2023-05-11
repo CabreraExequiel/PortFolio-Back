@@ -47,7 +47,7 @@ public class Controller {
      }
    }
    
-   @PostMapping("login")
+   @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Usuario usuario) {
         Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
         if (user != null) {
@@ -73,6 +73,8 @@ public class Controller {
    public List<Usuario> verUsuarios(){
        return userService.verUsuarios();
    }
+   
+   
 
 
    
