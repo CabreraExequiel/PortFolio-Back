@@ -32,24 +32,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Controller {
 
-    
+    @GetMapping("/health")
+public ResponseEntity<?> checkHealth() {
+  return ResponseEntity.ok().build();
+}
    @Autowired
    private IUsuarioService userService;
    
    @PostMapping("/nueva/descripcion")
-   public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario user) {
-     try {
-       Usuario usuarioExistente = userService.encontrarPorId(user.getId());
-       usuarioExistente.setDescripcion(user.getDescripcion());
-       userService.guardar(usuarioExistente);
-       return ResponseEntity.ok().build();
-     } catch (Exception e) {
-       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-     }
-   }
+   @CrossOrigin(origins = "*", allowedHeaders = "*")
+public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
+  try {
+    Usuario usuarioExistente = userService.encontrarPorId(usuario.getId());
+    usuarioExistente.setDescripcion(usuario.getDescripcion());
+    userService.guardar(usuarioExistente);
+    return ResponseEntity.ok().build();
+  } catch (Exception e) {
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+  }
+}
    
    @PostMapping("/login")
-   @CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app", allowedHeaders = "*")
+   @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<?> login(@RequestBody Usuario usuario) {
         Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
         if (user != null) {
