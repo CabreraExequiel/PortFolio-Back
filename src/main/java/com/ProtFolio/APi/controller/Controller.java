@@ -49,7 +49,7 @@ public class Controller {
    }
    
    @PostMapping("/login")
-   @CrossOrigin(origins = "*", allowedHeaders = "*")
+   @CrossOrigin(origins = "https://portfolio-frontend-cabrera.web.app", allowedHeaders = "*")
     public ResponseEntity<?> login(@RequestBody Usuario usuario) {
         Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
         if (user != null) {
