@@ -51,17 +51,17 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
   }
 }
-   
-   @PostMapping("/login")
-   @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ResponseEntity<?> login(@RequestBody Usuario usuario) {
-        Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
-        if (user != null) {
-            return ResponseEntity.ok(user);
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
+  
+@PostMapping("/login")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public ResponseEntity<?> login(@RequestBody Usuario usuario){
+    Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
+    if(user != null){
+        return ResponseEntity.ok(user);
+    }else {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
+}
   
    
    
