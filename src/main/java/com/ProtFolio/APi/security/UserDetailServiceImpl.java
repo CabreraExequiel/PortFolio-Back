@@ -1,4 +1,5 @@
-/*package com.ProtFolio.APi.security;
+/*
+package com.ProtFolio.APi.security;
 
 import com.ProtFolio.APi.model.Usuario;
 import com.ProtFolio.APi.repository.UsuarioRepository;
@@ -9,17 +10,20 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailServiceImpl implements UserDetailsService {
+public class UserDetailServiceImpl implements UserDetailsService{
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
+   @Autowired
+   private UsuarioRepository usuarioRepository;
+    
+    
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository
                 .findOneByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("El usuario con email " + email + " no existe."));
 
-        return new UserDetailsImpl(usuario);
+        return new UserDetailsImpl(usuario);       
     }
-}*/
+    
+}
+*/

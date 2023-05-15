@@ -25,8 +25,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 
@@ -51,6 +53,26 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
   }
 }
+
+/*
+@PostMapping("/perfil/foto")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public ResponseEntity<?> actualizarFotoPerfil(@RequestParam("id") Long id, @RequestParam("foto") MultipartFile foto) {
+  try {
+    Usuario usuarioExistente = userService.encontrarPorId(id);
+    // Guardar la nueva foto de perfil en el almacenamiento (por ejemplo, en el sistema de archivos o en Amazon S3)
+    String nuevaRutaFoto = almacenarFotoPerfil(foto);
+    // Actualizar la ruta de la foto de perfil en la base de datos
+    usuarioExistente.setRutaFotoPerfil(nuevaRutaFoto);
+    userService.guardar(usuarioExistente);
+    return ResponseEntity.ok().build();
+  } catch (Exception e) {
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+  }
+}
+*/
+
+
   
 @PostMapping("/login")
 @CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app")

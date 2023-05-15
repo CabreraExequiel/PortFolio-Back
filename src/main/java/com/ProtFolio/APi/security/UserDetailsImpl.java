@@ -1,7 +1,4 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-
 package com.ProtFolio.APi.security;
 
 import com.ProtFolio.APi.model.Usuario;
@@ -11,11 +8,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-
 @AllArgsConstructor
 public class UserDetailsImpl implements UserDetails{
     
-    private final Usuario usuario;
+    
+    private Usuario usuario;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -39,21 +36,22 @@ public class UserDetailsImpl implements UserDetails{
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+         return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+         return true;
     }
     
     public String getNombre(){
         return usuario.getNombre();
     }
     
-} */
+}
+*/
