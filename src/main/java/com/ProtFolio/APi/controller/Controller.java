@@ -53,7 +53,7 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
 }
   
 @PostMapping("/login")
-@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app0")
+@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app")
 public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     String email = credentials.get("email");
     String password = credentials.get("password");
