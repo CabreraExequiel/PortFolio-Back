@@ -1,4 +1,4 @@
- 
+/* 
 package com.ProtFolio.APi.security;
 
 import lombok.AllArgsConstructor;
@@ -63,7 +63,7 @@ public class WebSecurityConfig {
      .build());
      return manager;
  }
- */
+ 
  
  
  @Bean
@@ -86,3 +86,4 @@ public class WebSecurityConfig {
  }
 
 }
+*/

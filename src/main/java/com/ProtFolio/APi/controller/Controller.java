@@ -53,12 +53,14 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
 }
   
 @PostMapping("/login")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-public ResponseEntity<?> login(@RequestBody Usuario usuario){
-    Usuario user = userService.authenticate(usuario.getEmail(), usuario.getPassword());
-    if(user != null){
+@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app0")
+public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
+    String email = credentials.get("email");
+    String password = credentials.get("password");
+    Usuario user = userService.authenticate(email, password);
+    if (user != null) {
         return ResponseEntity.ok(user);
-    }else {
+    } else {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }

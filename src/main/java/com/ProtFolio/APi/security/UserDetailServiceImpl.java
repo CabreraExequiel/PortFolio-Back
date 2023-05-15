@@ -1,4 +1,4 @@
-package com.ProtFolio.APi.security;
+/*package com.ProtFolio.APi.security;
 
 import com.ProtFolio.APi.model.Usuario;
 import com.ProtFolio.APi.repository.UsuarioRepository;
@@ -22,4 +22,4 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         return new UserDetailsImpl(usuario);
     }
-}
+}*/

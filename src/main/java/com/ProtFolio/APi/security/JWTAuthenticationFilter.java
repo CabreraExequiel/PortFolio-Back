@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-*/
+
 package com.ProtFolio.APi.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,6 +38,10 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         
         return getAuthenticationManager().authenticate(usernamePAT);
     }
+    
+    
+    
+    
 
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
@@ -49,14 +53,11 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.addHeader("Authorization", "Bearer " + token);
         response.getWriter().flush();
         
-        super.successfulAuthentication(request, response, chain, authResult); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.successfulAuthentication(request, response, chain, authResult);
     }
     
+ 
     
     
-    
-    
-    
-    
-}
+}*/
  

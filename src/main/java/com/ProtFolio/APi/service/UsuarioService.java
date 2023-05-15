@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import org.springframework.stereotype.Service;
 
@@ -34,9 +35,12 @@ public class UsuarioService implements IUsuarioService{
   }
 
   @Override
-  public void guardar(Usuario usuario) {
+public void guardar(Usuario usuario) {
+    // Encriptar la contraseña con BCrypt
+   // String passwordEncriptado = new BCryptPasswordEncoder().encode(usuario.getPassword());
+ //   usuario.setPassword(passwordEncriptado);
     userRepo.save(usuario);
-  }
+}
 
 
     @Override

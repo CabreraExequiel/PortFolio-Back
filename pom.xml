@@ -58,7 +58,7 @@
 	 </dependency>
          
          
-         <dependency>
+       <!--  <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
@@ -79,7 +79,7 @@
     <artifactId>jjwt-jackson</artifactId>
     <version>0.11.2</version>
     <scope>runtime</scope>
-</dependency>
+</dependency>-->
          
          
          
