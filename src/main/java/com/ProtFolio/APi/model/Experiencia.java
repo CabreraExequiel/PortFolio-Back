@@ -2,9 +2,13 @@
 package com.ProtFolio.APi.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +23,9 @@ public class Experiencia {
     private String empresa;
     private String descripcion;
     private String url_img;
+    
+    @ManyToMany(mappedBy = "experiencias", fetch = FetchType.LAZY)
+    private Set<Usuario> usuarios = new HashSet<>();
     
     public Experiencia(){}
     

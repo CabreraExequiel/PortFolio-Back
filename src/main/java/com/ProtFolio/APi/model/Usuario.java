@@ -3,9 +3,16 @@ package com.ProtFolio.APi.model;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +32,16 @@ private String url_img;
 private String email;
 private String password;
 
+@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
+    private Set<Proyecto> proyectos = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "usuario_experiencia",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "experiencia_id")
+    )
+    private Set<Experiencia> experiencias = new HashSet<>();
 
 
 
@@ -39,11 +56,7 @@ public Usuario(Long id, String nombre, String apellido, String titulo, String de
     this.url_foto = url_foto;
     this.url_img = url_img;
     this.email = email;
-    this.password = password;
-    
-    
-    
+    this.password = password; 
 }
-
 }
 

@@ -5,33 +5,27 @@ import com.ProtFolio.APi.model.Educacion;
 import com.ProtFolio.APi.model.Empleo;
 import com.ProtFolio.APi.model.Experiencia;
 import com.ProtFolio.APi.model.Proyecto;
-
 import com.ProtFolio.APi.model.Usuario;
 import com.ProtFolio.APi.service.IEducacionService;
 import com.ProtFolio.APi.service.IEmpleoService;
 import com.ProtFolio.APi.service.IExperienciaService;
 import com.ProtFolio.APi.service.IProyectoService;
-
 import com.ProtFolio.APi.service.IUsuarioService;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-
 public class Controller {
 
  
@@ -61,7 +55,7 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
 }
 
 @PostMapping("/login")
-@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app/")
+@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app")
 public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     String email = credentials.get("email");
     String password = credentials.get("password");
@@ -79,7 +73,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
    }
    
   @GetMapping("/ver/usuario")
-    @CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app/", allowedHeaders = "*")
+    @CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app", allowedHeaders = "*")
     @ResponseBody
     public List<Usuario> verUsuarios(){
         return userService.verUsuarios();
