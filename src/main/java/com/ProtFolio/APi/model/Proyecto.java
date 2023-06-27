@@ -22,9 +22,7 @@ public class Proyecto {
     private String descripcion;
     private String url_img;
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+   
     
     public Proyecto(){}
     

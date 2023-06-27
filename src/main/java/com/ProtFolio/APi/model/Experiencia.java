@@ -24,8 +24,7 @@ public class Experiencia {
     private String descripcion;
     private String url_img;
     
-    @ManyToMany(mappedBy = "experiencias", fetch = FetchType.LAZY)
-    private Set<Usuario> usuarios = new HashSet<>();
+    
     
     public Experiencia(){}
     

@@ -32,18 +32,6 @@ private String url_img;
 private String email;
 private String password;
 
-@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
-    private Set<Proyecto> proyectos = new HashSet<>();
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "usuario_experiencia",
-        joinColumns = @JoinColumn(name = "usuario_id"),
-        inverseJoinColumns = @JoinColumn(name = "experiencia_id")
-    )
-    private Set<Experiencia> experiencias = new HashSet<>();
-
-
 
 public Usuario(){}
 
