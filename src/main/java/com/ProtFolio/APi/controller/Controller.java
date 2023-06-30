@@ -55,7 +55,7 @@ public ResponseEntity<?> actualizarDescripcion(@RequestBody Usuario usuario) {
 }
 
 @PostMapping("/login")
-@CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app")
+@CrossOrigin(origins = "http://localhost:4200")
 public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     String email = credentials.get("email");
     String password = credentials.get("password");
@@ -73,7 +73,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
    }
    
   @GetMapping("/ver/usuario")
-    @CrossOrigin(origins = "https://portfolio-backend-exequiel.web.app", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @ResponseBody
     public List<Usuario> verUsuarios(){
         return userService.verUsuarios();
@@ -90,7 +90,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     }
     
     @GetMapping("/ver/educacion")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @ResponseBody
     public List<Educacion> verEducacion(){
         return eduService.verEducacion();
@@ -108,7 +108,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     }
     
     @GetMapping("/ver/experiencia")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @ResponseBody
     public List<Experiencia> verExperiencia(){
         return expService.verExperiencia();
@@ -125,7 +125,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
 }
     
     @GetMapping("/ver/empleo")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @ResponseBody
     public List<Empleo> verEmpleo(){
     return empService.verEmpleo();
@@ -142,7 +142,7 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
     }
     
     @GetMapping("/ver/proyecto")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @ResponseBody
     public List<Proyecto> verProyecto(){
         return proService.verProyecto();
